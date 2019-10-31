@@ -1,0 +1,26 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>pagina2</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<h1>Enviando con evento</h1>
+	<ion-list *ngFor="let mutante of mutantes">
+		<ion-item (click)="irPagina3(mutante)">
+			{{mutante.nombre}}
+		</ion-item>
+	</ion-list>
+
+	<h1>Enviando con html</h1>
+	<ion-list *ngFor="let mutante of mutantes">
+		<ion-item [navPush]="pagina3"
+					[navParams]="{'mutante':mutante}">
+			{{mutante.nombre}}
+		</ion-item>
+	</ion-list>
+</ion-content>
